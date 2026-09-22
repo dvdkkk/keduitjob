@@ -2,6 +2,7 @@ import React from 'react';
 import { TARGET_AUDIENCE } from '../data/bootcampData';
 import { Compass, Cpu, Target, Sparkles, CheckCircle2, ArrowRight, ShieldCheck, UserPlus, Gift } from 'lucide-react';
 import { ScrollReveal, StaggerContainer, StaggerItem } from './ScrollReveal';
+import { openInquiryForm } from '../utils/navigation';
 
 export const TargetAudienceSection: React.FC = () => {
   const getIcon = (iconName: string) => {
@@ -20,16 +21,7 @@ export const TargetAudienceSection: React.FC = () => {
   };
 
   const handleInquiryScroll = () => {
-    const formElement = document.getElementById('fast-inquiry-form');
-    const sectionElement = document.getElementById('fast-inquiry');
-
-    if (window.innerWidth < 1024 && formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    openInquiryForm();
   };
 
   return (

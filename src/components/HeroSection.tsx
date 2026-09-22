@@ -16,6 +16,7 @@ import {
   TrendingUp,
   Zap
 } from 'lucide-react';
+import { handlePhoneClick } from '../utils/navigation';
 
 interface HeroSectionProps {
   onOpenApplication: () => void;
@@ -203,7 +204,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication, onO
 
             <div className="p-4 rounded-xl bg-[#0a0b0d] border border-[#c5a47e]/20 text-center">
               <span className="text-[11px] text-gray-400 block mb-1">문의 전화</span>
-              <a href="tel:1599-6529" className="text-xl font-black text-[#c5a47e] hover:underline">
+              <a
+                href="tel:1599-6529"
+                className="text-xl font-black text-[#c5a47e] hover:underline"
+                title="교육문의 (PC: 상담신청 / 모바일: 전화연결)"
+                onClick={handlePhoneClick}
+              >
                 1599-6529
               </a>
             </div>

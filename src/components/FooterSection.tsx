@@ -4,6 +4,7 @@ import { Phone } from 'lucide-react';
 import { KLogoIcon } from './KLogoIcon';
 import { PrivacyModal } from './PrivacyModal';
 import { TermsModal } from './TermsModal';
+import { handlePhoneClick } from '../utils/navigation';
 
 export const FooterSection: React.FC = () => {
   const [modalType, setModalType] = useState<'terms' | 'privacy' | null>(null);
@@ -32,7 +33,12 @@ export const FooterSection: React.FC = () => {
 
             <div className="flex items-center gap-3 text-white font-black text-lg">
               <Phone className="w-5 h-5 text-[#c5a47e]" />
-              <a href={`tel:${COMPANY_INFO.phone}`} className="hover:text-[#c5a47e] transition-colors">
+              <a
+                href={`tel:${COMPANY_INFO.phone}`}
+                className="hover:text-[#c5a47e] transition-colors"
+                title="교육문의 (PC: 상담신청 / 모바일: 전화연결)"
+                onClick={handlePhoneClick}
+              >
                 {COMPANY_INFO.phone}
               </a>
             </div>

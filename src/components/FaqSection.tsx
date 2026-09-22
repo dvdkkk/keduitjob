@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FAQ_ITEMS } from '../data/bootcampData';
-import { HelpCircle, ChevronDown, ChevronUp, MessageCircleQuestion } from 'lucide-react';
+import { HelpCircle, ChevronDown, ChevronUp, MessageCircleQuestion, ArrowRight } from 'lucide-react';
 import { ScrollReveal, StaggerContainer, StaggerItem } from './ScrollReveal';
 
 interface FaqSectionProps {
@@ -78,6 +78,20 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenApplication }) => 
             );
           })}
         </StaggerContainer>
+
+        {/* Bottom CTA in FAQ */}
+        <div className="mt-12 text-center">
+          <p className="text-sm text-gray-400 mb-4 font-medium">
+            더 궁금한 점이 있으신가요? 1:1 전담 상담사가 자격 및 혜택을 상세히 안내해드립니다.
+          </p>
+          <button
+            onClick={onOpenApplication}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#c5a47e] via-[#e2d1c3] to-[#c5a47e] text-black font-black text-sm sm:text-base hover:shadow-[0_0_25px_rgba(197,164,126,0.5)] transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl"
+          >
+            <span>무료 교육 상담 신청하기</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </section>
   );
